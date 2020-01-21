@@ -1,5 +1,9 @@
 import React from 'react';
 
+function likes(){
+  const [data] = useState(likes);
+  console.log(data)
+}
 const LikeSection = props => {
   return (
     <div>
@@ -15,7 +19,7 @@ const LikeSection = props => {
       </div>
     </div>
     <p className="like-number">
-      
+
       likes</p>
 </div>
   )

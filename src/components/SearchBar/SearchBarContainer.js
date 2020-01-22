@@ -1,32 +1,41 @@
-// You do not need to change any code in this file
-import React from "react";
-import "./SearchBar.css";
 
-const SearchBar = () => {
+import React from 'react';
+import InstagramIcon from '../../assets/003-instagram.png'
+import InstagramLogo from '../../assets/instagram-logo.png';
+import Compass from '../../assets/001-compass.png';
+import Heart from '../../assets/005-heart.png';
+import Profile from '../../assets/002-profile.png';
+import './SearchBar.css';
+import { Image35 } from '../../Styles';
+
+const SearchBar = props => {
+  console.log(props)
   return (
-    <div className="search-bar-wrapper">
-      <div className="image-wrapper">
-        <i className="fab fa-instagram" />
+    <div className='search-container'>
+      <div className='logo-left'>
+        <Image35 src={InstagramIcon} alt='Instagram Icon' />
+        <Image35 src={InstagramLogo} alt='Instagram Logo' />
       </div>
-      <form className="search-form">
+      <div className='search-center'>
         <input
-          type="text"
-          placeholder="Search"
+        className='search-input'
+        type='text'
+        placeholder=' &#x1F50D; Search'
+        value={props.filterTarget}
+        onChange={props.changeHandler}
+        onKeyDown={props.searchPosts}
+        name='filterTarget'
         />
-      </form>
-      <div className="social-wrapper">
-        <div className="social">
-          <i className="far fa-compass" />
-        </div>
-        <div className="social">
-          <i className="far fa-heart" />
-        </div>
-        <div className="social">
-          <i className="far fa-user-circle" />
-        </div>
+
+      </div>
+      <div className='icons-right'>
+        <img className='insta-compass' src={Compass} alt='Compass Icon' />
+        <img className='insta-heart' src={Heart} alt='Heart Icon' />
+        <img className='insta-profile' src={Profile} alt='Profile Icon' />
       </div>
     </div>
   );
-};
+}
+
 
 export default SearchBar;
